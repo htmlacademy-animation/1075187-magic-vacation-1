@@ -1,3 +1,12 @@
+@include fadeIn;
+
+@keyframes slideLeft {
+  to {
+    transform: scale(1, 1);
+    transition: transform ease-in-out 0.3s;
+  }
+}
+
 .form {
   position: relative;
   display: flex;
@@ -144,5 +153,17 @@
     @media (max-width: $mobile) and (orientation: landscape) {
       width: calc(100% - 5rem);
     }
+  }
+}
+
+.chat__footer .form__field {
+  opacity: 0;
+  transform: scale(0.3, 1);
+  transform-origin: 100% 0;
+
+  .screen.active & {
+    animation-name: fadeIn, slideLeft;
+    animation-duration: 1s, 0.6s;
+    animation-fill-mode: forwards;
   }
 }
