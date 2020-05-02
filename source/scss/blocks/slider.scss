@@ -1,3 +1,6 @@
+@include fadeIn;
+@include slideLeft;
+
 .slider {
   position: relative;
   flex-grow: 1;
@@ -95,6 +98,8 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
+  opacity: 0;
+  transform: translateX(50px);
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
@@ -122,6 +127,20 @@
     font-size: 1.4rem;
     line-height: 1.5rem;
   }
+}
+
+.swiper-slide-next .slider__item-text,
+.swiper-slide-active .slider__item-text {
+  /*opacity: 1;
+  transform: translateX(0);
+  transition: opacity linear 2s, transform ease-in-out 1s;*/
+  animation-name: fadeIn, slideLeft;
+  animation-duration: 0.6s, 0.6s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s, 0.4s;
+}
+.swiper-slide-next .slider__item-text {
+  animation-delay: 0.4s, 0.5s;
 }
 
 .slider__controls {

@@ -1,22 +1,5 @@
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(50px);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
+@include fadeIn;
+@include slideUp;
 
 .intro {
   display: flex;
@@ -115,7 +98,6 @@
   line-height: 1.27;
   opacity: 0;
   transform: translateY(50px);
-  //transition: opacity 0.5s linear 0.5s, transform 0.625s ease-in-out 0.5s;
 
   @media (min-width: $stop-scaling) {
     width: 509px;
