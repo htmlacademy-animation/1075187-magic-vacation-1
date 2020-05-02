@@ -171,6 +171,7 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  transition: all linear 0.25s;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
