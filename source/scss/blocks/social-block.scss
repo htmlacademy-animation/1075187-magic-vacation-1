@@ -185,6 +185,7 @@
   opacity: 0;
   max-height: 0;
   transition: all linear 0.25s;
+  overflow: hidden;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
