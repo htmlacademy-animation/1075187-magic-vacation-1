@@ -67,16 +67,16 @@
   }
 }
 
-@mixin slideUp {
-  @keyframes slideUp {
+@mixin moveUp {
+  @keyframes moveUp {
     to {
       transform: translateY(0);
     }
   }
 }
 
-@mixin slideLeft {
-  @keyframes slideLeft {
+@mixin moveLeft {
+  @keyframes moveLeft {
     to {
       transform: translateX(0);
     }

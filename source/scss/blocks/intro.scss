@@ -1,5 +1,5 @@
 @include fadeIn;
-@include slideUp;
+@include moveUp;
 
 .intro {
   display: flex;
@@ -141,10 +141,10 @@
 }
 
 .screen.active .intro__message {
-  animation-name: fadeIn, slideUp;
+  animation-name: fadeIn, moveUp;
   animation-duration: 2s, 1s;
   animation-fill-mode: forwards;
-  animation-delay: 0s, 0.25s;
+  animation-delay: 0s, 0.3s;
 }
 
 .intro__label {
