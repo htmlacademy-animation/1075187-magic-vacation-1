@@ -35,6 +35,7 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  overflow: hidden;
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -68,6 +69,16 @@
     display: block;
     width: 100%;
     height: auto;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition-property: opacity, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: linear, cubic-bezier(0, 0, 1, 0.8);
+
+    .loaded & {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }
 
@@ -177,6 +188,12 @@
   font-size: 1.2rem;
   line-height: 1.0418;
   color: $c-light;
+  opacity: 0;
+  transition: opacity linear 0.3s;
+
+  .loaded & {
+    opacity: 1;
+  }
 
   @media (min-width: $stop-scaling) {
     font-size: 12px;
@@ -241,7 +258,7 @@
     display: block;
     color: inherit;
     padding: 0 0.5em 0.5em;
-    transition: color linear 0.25s;
+    transition: color linear 0.3s;
 
     &::after {
       content: "";
@@ -274,11 +291,6 @@
       }
     }
 
-    &.active {
-      &::after {
-      }
-    }
-
     &:hover,
     &:focus {
       color: $c-purple;
@@ -290,7 +302,7 @@
       }
     }
 
-    &.active::after,
+    .loaded &.active::after,
     &:hover::after,
     &:focus::after {
       transform: scale(1);
