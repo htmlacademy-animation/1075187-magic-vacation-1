@@ -24,10 +24,12 @@ fullPageScroll.init();
 
 
 const $rulesBtn = document.querySelector(`.rules__link`);
-const $rulesLastItem = document.querySelector(`.screen--rules.active .rules__item:last-child p`);
+const $rulesLastItem = document.querySelector(`.screen--rules .rules__item:last-child p`);
 
 window.onload = () => {
   document.body.classList.add(`loaded`);
+
+  $rulesLastItem.addEventListener(`transitionend`, setClassOnTransitionEnd);
 };
 
 document.body.addEventListener(`screenChanged`, (event) => {
@@ -38,6 +40,7 @@ document.body.addEventListener(`screenChanged`, (event) => {
   if (event.detail.screenName === `rules`) {
     $rulesLastItem.addEventListener(`transitionend`, setClassOnTransitionEnd);
   } else {
+    // prevent second change on elements state restore when screen was hidden
     $rulesLastItem.removeEventListener(`transitionend`, setClassOnTransitionEnd);
     $rulesBtn.classList.remove(`animated`);
   }
