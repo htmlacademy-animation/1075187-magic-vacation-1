@@ -22,6 +22,29 @@ social();
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
 
+
+const $rulesBtn = document.querySelector(`.rules__link`);
+const $rulesLastItem = document.querySelector(`.screen--rules.active .rules__item:last-child p`);
+
 window.onload = () => {
   document.body.classList.add(`loaded`);
 };
+
+document.body.addEventListener(`screenChanged`, (event) => {
+  if (!event.detail) {
+    return;
+  }
+
+  if (event.detail.screenName === `rules`) {
+    $rulesLastItem.addEventListener(`transitionend`, setClassOnAnimationEnd);
+  } else {
+    $rulesLastItem.removeEventListener(`transitionend`, setClassOnAnimationEnd);
+    $rulesBtn.classList.remove(`animated`);
+  }
+});
+
+function setClassOnAnimationEnd(event) {
+  if (event.propertyName === `opacity`) {
+    $rulesBtn.classList.add(`animated`);
+  }
+}
