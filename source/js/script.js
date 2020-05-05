@@ -36,14 +36,14 @@ document.body.addEventListener(`screenChanged`, (event) => {
   }
 
   if (event.detail.screenName === `rules`) {
-    $rulesLastItem.addEventListener(`transitionend`, setClassOnAnimationEnd);
+    $rulesLastItem.addEventListener(`transitionend`, setClassOnTransitionEnd);
   } else {
-    $rulesLastItem.removeEventListener(`transitionend`, setClassOnAnimationEnd);
+    $rulesLastItem.removeEventListener(`transitionend`, setClassOnTransitionEnd);
     $rulesBtn.classList.remove(`animated`);
   }
 });
 
-function setClassOnAnimationEnd(event) {
+function setClassOnTransitionEnd(event) {
   if (event.propertyName === `opacity`) {
     $rulesBtn.classList.add(`animated`);
   }
