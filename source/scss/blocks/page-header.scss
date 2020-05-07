@@ -35,7 +35,6 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
-  overflow: hidden;
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -69,16 +68,6 @@
     display: block;
     width: 100%;
     height: auto;
-    opacity: 0;
-    transform: translateX(-100%);
-    transition-property: opacity, transform;
-    transition-duration: 0.3s;
-    transition-timing-function: linear, cubic-bezier(0, 0, 1, 0.8);
-
-    .loaded & {
-      opacity: 1;
-      transform: translateX(0);
-    }
   }
 }
 
@@ -188,12 +177,6 @@
   font-size: 1.2rem;
   line-height: 1.0418;
   color: $c-light;
-  opacity: 0;
-  transition: opacity linear 0.3s;
-
-  .loaded & {
-    opacity: 1;
-  }
 
   @media (min-width: $stop-scaling) {
     font-size: 12px;
@@ -258,7 +241,6 @@
     display: block;
     color: inherit;
     padding: 0 0.5em 0.5em;
-    transition: color linear 0.3s;
 
     &::after {
       content: "";
@@ -267,16 +249,8 @@
       width: 100%;
       height: 2px;
       background-color: $c-light;
-      display: block;
+      display: none;
       left: 0;
-      transform: scale(0, 1);
-      transform-origin: 100% 0;
-      transition: transform ease-in-out 0.3s, background-color linear 0.3s;
-
-      @media (min-width: $stop-scaling) {
-        left: -5px;
-        right: -5px;
-      }
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -291,6 +265,12 @@
       }
     }
 
+    &.active {
+      &::after {
+        display: block;
+      }
+    }
+
     &:hover,
     &:focus {
       color: $c-purple;
@@ -300,13 +280,6 @@
         opacity: 1;
         background-color: $c-purple;
       }
-    }
-
-    .loaded &.active::after,
-    &:hover::after,
-    &:focus::after {
-      transform: scale(1);
-      transform-origin: 0 0;
     }
   }
 }
