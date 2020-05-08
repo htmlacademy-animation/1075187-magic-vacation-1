@@ -25,9 +25,9 @@ export default class TextAnimation {
     span.textContent = char;
 
     if (_index % 3 === 0) {
-      this._delay -= 20;
+      this._delay -= 30;
     } else {
-      this._delay += 40;
+      this._delay += 60;
     }
 
     if (index === 0) {
@@ -68,8 +68,3 @@ export default class TextAnimation {
     this._element.classList.remove(this._activeClass);
   }
 }
-
-const animationTopScreenTextLine = new TextAnimation(`.text`, 500, `active`, `transform`);
-setTimeout(() => {
-  animationTopScreenTextLine.startAnimation();
-}, 300);
