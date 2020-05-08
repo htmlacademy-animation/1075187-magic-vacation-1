@@ -33,6 +33,11 @@
   line-height: 0.906;
   letter-spacing: -0.04em;
 
+  .text__word {
+    margin: -0.17em 0 -0.05rem;
+    padding: 0.17em 0 0.05em;
+  }
+
   @media (min-width: $stop-scaling) {
     max-width: 990px;
     font-size: 120px;
@@ -49,6 +54,26 @@
 
   @media (max-width: $mobile) and (orientation: landscape) {
     font-size: 5rem;
+  }
+}
+
+.text__word {
+  margin: -0.17em 0 -0.05rem;
+  padding: 0.17em 0 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &,
+  span {
+    display: inline-block;
+  }
+
+  & > span {
+    transform: translate3d(0, 1em, 0);
+
+    .active-text & {
+      transform: translate3d(0, 0, 0);
+    }
   }
 }
 
