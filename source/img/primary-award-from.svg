@@ -55,11 +55,32 @@
   <g id="cloud-left">
     <line x1="28.18" y1="38.34" x2="91.09" y2="38.34" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
     <path d="M41.77,97.54H77.06a12.4,12.4,0,1,1,24.8,0h17.93" transform="translate(-40.77 -69.46)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <animate id="cloudLeftOpacity"
+             attributeName="stroke-opacity"
+             dur="4s"
+             values="0; 1; 1; 0"
+             keyTimes="0; 0.25; 0.75; 1"
+             repeatCount="indefinite"/>
+    <animateMotion id="cloudLeftMotion"
+                   dur="4s"
+                   from="180,0" to="-10,0"
+                   repeatCount="indefinite"/>
   </g>
   <g id="cloud-right">
     <line x1="218.19" y1="23.72" x2="257.97" y2="23.72" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
     <path d="M278.75,82.91H251.39a12.4,12.4,0,1,0-24.8,0H208.65" transform="translate(-40.77 -69.46)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
     <line x1="246.24" y1="13.45" x2="268.43" y2="13.45" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <animate attributeName="stroke-opacity"
+             dur="4s"
+             begin="2s"
+             values="0; 1; 1; 0"
+             keyTimes="0; 0.25; 0.75; 1"
+             repeatCount="indefinite"/>
+    <animateMotion dur="4s"
+                   begin="2s"
+                   from="80,0" to="-180,0"
+                   repeatCount="indefinite"/>
+    <!--                   begin="cloudLeftMotion.end"-->
   </g>
   <g id="zeppelin-stream">
     <line x1="65.48" y1="110.03" x2="43.28" y2="110.03" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
