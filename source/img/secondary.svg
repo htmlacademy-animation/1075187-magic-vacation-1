@@ -39,60 +39,63 @@
         <path d="M215.46,83.44c-9.93,0-18,20.9-18.54,55.32,0,0.09,0,.17,0,0.26,0-6.76,8.3-12.25,18.53-12.25S234,132.27,234,139c0-.09,0-0.17,0-0.26-0.51-34.43-8.6-55.33-18.52-55.33" fill="#f7396b" />
       </g>
       <animate attributeName="opacity"
-               begin="clouds.end"
+               begin="cloudsMove.begin + 0.2s"
                from="0" to="1"
-               dur="0.01s"
+               dur="0.1s"
                fill="freeze" />
       <animateTransform attributeName="transform"
                         type="rotate"
-                        begin="clouds.end"
+                        begin="cloudsMove.begin + 0.2s"
                         values="30; -30; 20; 18.29; -6.48; 0"
-                        dur="3s"
+                        dur="1.65s"
                         fill="freeze"
                         additive="sum" />
     </g>
     <animateTransform attributeName="transform"
                       type="scale"
-                      begin="clouds.end"
+                      begin="cloudsMove.begin + 0.2s"
                       from="0" to="1"
-                      dur="3s"
+                      dur="1.65s"
                       fill="freeze"
                       additive="sum" />
-    <animateMotion begin="clouds.end"
-                   dur="3s"
+    <animateMotion begin="cloudsMove.begin + 0.2s"
+                   dur="1.65s"
                    fill="freeze"
                    path="M179,111c24.19-9.24,29.8-15.84,29.42-20.44C207.18,75.43,138.73,51.78,96,84c-2.93,2.21-31.66,24.52-29,54,3.54,39.18,59.83,61.15,75.7,67.35,53.65,20.94,94.43,8.79,101.78,27.18,2.89,7.25.78,19.69-21.48,42.47" />
   </g>
 
-  <g opacity="0">
-    <line x1="65.43" y1="77.72" x2="105.21" y2="77.72" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
-    <path d="M85.22,67.45H57.86a12.4,12.4,0,1,0-24.8,0H15.13" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
-    <line x1="93.48" y1="67.45" x2="115.68" y2="67.45" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
-    <line x1="272.13" y1="145.27" x2="311.9" y2="145.27" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
-    <line x1="300.17" y1="135" x2="322.37" y2="135" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
-    <path d="M235.770000,119L216.320000,119C216.067830,102.302633,204.209282,88.039826,187.838480,84.743998C171.467677,81.448170,155.013788,90.011018,148.320000,105.310000C144.377487,103.121523,139.939159,101.981813,135.430000,102C124.456839,102.036720,114.621695,108.778553,110.630000,119L95.480000,119C89.681010,119,84.980000,123.701010,84.980000,129.500000C84.980000,135.298990,89.681010,140,95.480000,140L235.780000,140C241.578990,140,246.280000,135.298990,246.280000,129.500000C246.280000,123.701010,241.578990,119,235.780000,119" fill="#fff" />
+  <g>
+    <g>
+      <line x1="65.43" y1="77.72" x2="105.21" y2="77.72" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
+      <path d="M85.22,67.45H57.86a12.4,12.4,0,1,0-24.8,0H15.13" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
+      <line x1="93.48" y1="67.45" x2="115.68" y2="67.45" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
+      <line x1="272.13" y1="145.27" x2="311.9" y2="145.27" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
+      <line x1="300.17" y1="135" x2="322.37" y2="135" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
+      <animateTransform attributeName="transform"
+                        type="translate"
+                        dur="1.3s"
+                        values="330 0; 0 0; 0 0; 0 -50"
+                        keyTimes="0; 0.2; 0.85; 1"
+                        fill="freeze"
+                        additive="sum"/>
+    </g>
+
+    <path d="M235.770000,119L216.320000,119C216.067830,102.302633,204.209282,88.039826,187.838480,84.743998C171.467677,81.448170,155.013788,90.011018,148.320000,105.310000C144.377487,103.121523,139.939159,101.981813,135.430000,102C124.456839,102.036720,114.621695,108.778553,110.630000,119L95.480000,119C89.681010,119,84.980000,123.701010,84.980000,129.500000C84.980000,135.298990,89.681010,140,95.480000,140L235.780000,140C241.578990,140,246.280000,135.298990,246.280000,129.500000C246.280000,123.701010,241.578990,119,235.780000,119" fill="#fff">
+      <animateTransform id="cloudsMove"
+                        attributeName="transform"
+                        type="translate"
+                        dur="1.3s"
+                        values="330 0; -20 0; -20 0; -20 -50"
+                        keyTimes="0; 0.3; 0.85; 1"
+                        fill="freeze"
+                        additive="sum"/>
+    </path>
     <animate id="clouds"
              attributeName="opacity"
-             from="0" to="1"
-             dur="1s"
+             dur="1.4s"
+             values="0; 1; 1; 0"
+             keyTimes="0; 0.2; 0.8; 1"
              fill="freeze" />
-    <animateTransform id="clouds"
-                      attributeName="transform"
-                      values="250; 0"
-                      fill="freeze"
-                      calcMode="spline"
-                      keySplines="0.4 0 0.2 1"
-                      dur="1s" />
-    <animate attributeName="opacity"
-             begin="clouds.end + 1s"
-             from="1" to="0"
-             dur="1s"
-             fill="freeze" />
-    <animateTransform attributeName="transform"
-                      begin="clouds.end + 1s"
-                      to="0, -50"
-                      fill="freeze"
-                      dur="1s" />
   </g>
 
   <g>
