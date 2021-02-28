@@ -1,9 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 269.43 260.54">
   <g id="zeppelin">
+    <animate id="zeppelinWindowOpacityEnd" attributeType="CSS" attributeName="opacity" dur="0.5s" begin="2.3s" from="1"
+             to="0" fill="freeze" />
     <g id="cabin">
       <path d="M134.67 179.82h48.36a13.27 13.27 0 0013-10.65l3.74-18.32h-68.18v25.89a3.09 3.09 0 003.08 3.08z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
       <path d="M195.02 172.23h-9.22a8.31 8.31 0 01-8.28-8.31v-13.07" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-      <path d="M163.48 162.42h-2.05a3.45 3.45 0 00-3.43 3.45v2.92a3.45 3.45 0 003.43 3.45h2.05a3.45 3.45 0 003.43-3.45v-2.92a3.44 3.44 0 00-3.43-3.45z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <g id="movedWindow">
+        <path d="M163.48 162.42h-2.05a3.45 3.45 0 00-3.43 3.45v2.92a3.45 3.45 0 003.43 3.45h2.05a3.45 3.45 0 003.43-3.45v-2.92a3.44 3.44 0 00-3.43-3.45z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
       <path d="M144.87 162.42h-2.05a3.45 3.45 0 00-3.43 3.45v2.92a3.45 3.45 0 003.43 3.45h2.05a3.45 3.45 0 003.43-3.45v-2.92a3.45 3.45 0 00-3.43-3.45z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
       <animateTransform attributeName="transform"
                         type="scale"
@@ -53,34 +57,53 @@
     </g>
   </g>
   <g id="cloud-left">
-    <line x1="28.18" y1="38.34" x2="91.09" y2="38.34" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-    <path d="M41.77,97.54H77.06a12.4,12.4,0,1,1,24.8,0h17.93" transform="translate(-40.77 -69.46)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <line x1="28.18" y1="38.34" x2="91.09" y2="38.34" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
+      <animateMotion dur="4.25s"
+                     from="180,0" to="-10,0"
+                     repeatCount="1"
+                     fill="freeze"/>
+    </line>
+    <path d="M41.77,97.54H77.06a12.4,12.4,0,1,1,24.8,0h17.93" transform="translate(-40.77 -69.46)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
+      <animateMotion id="cloudLeftMotion"
+                     dur="4s"
+                     from="180,0" to="-10,0"
+                     repeatCount="1"
+                     fill="freeze"/>
+    </path>
     <animate id="cloudLeftOpacity"
              attributeName="stroke-opacity"
              dur="4s"
              values="0; 1; 1; 0"
              keyTimes="0; 0.25; 0.75; 1"
-             repeatCount="indefinite"/>
-    <animateMotion id="cloudLeftMotion"
-                   dur="4s"
-                   from="180,0" to="-10,0"
-                   repeatCount="indefinite"/>
+             repeatCount="1"
+             fill="freeze"/>
+
   </g>
-  <g id="cloud-right">
-    <line x1="218.19" y1="23.72" x2="257.97" y2="23.72" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-    <path d="M278.75,82.91H251.39a12.4,12.4,0,1,0-24.8,0H208.65" transform="translate(-40.77 -69.46)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-    <line x1="246.24" y1="13.45" x2="268.43" y2="13.45" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+  <g id="cloud-right" stroke-opacity="0">
+    <line x1="218.19" y1="23.72" x2="257.97" y2="23.72" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
+      <animateMotion dur="4.25s"
+                     begin="2s"
+                     from="80,0" to="-180,0"
+                     repeatCount="1"
+                     fill="freeze"/>
+    </line>
+    <g>
+      <path d="M278.75,82.91H251.39a12.4,12.4,0,1,0-24.8,0H208.65" transform="translate(-40.77 -69.46)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <line x1="246.24" y1="13.45" x2="268.43" y2="13.45" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      <animateMotion id="cloudRightMotion"
+                     dur="4s"
+                     begin="2s"
+                     from="80,0" to="-180,0"
+                     repeatCount="1"
+                     fill="freeze"/>
+    </g>
     <animate attributeName="stroke-opacity"
              dur="4s"
              begin="2s"
              values="0; 1; 1; 0"
              keyTimes="0; 0.25; 0.75; 1"
-             repeatCount="indefinite"/>
-    <animateMotion dur="4s"
-                   begin="2s"
-                   from="80,0" to="-180,0"
-                   repeatCount="indefinite"/>
-    <!--                   begin="cloudLeftMotion.end"-->
+             repeatCount="1"
+             fill="freeze"/>
   </g>
   <g id="zeppelin-stream">
     <line x1="65.48" y1="110.03" x2="43.28" y2="110.03" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
@@ -107,8 +130,12 @@
     </line>
   </g>
   <g id="mountain">
-    <path d="M289.94,327.88H244.88L212.8,296.58a1.89,1.89,0,0,0-2.44,0l-10.2,10.23a1.72,1.72,0,0,1-2.25,0l-19-20.17a2.4,2.4,0,0,0-3.1,0l-26.42,25.64a1.71,1.71,0,0,1-2.25,0l-2.63-2.92a1.71,1.71,0,0,0-2.31,0L124.63,329H80.78" transform="translate(-40.77 -69.46)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-    <path d="M289.94,328H200.15c-0.86,0-1.56,0-2.25,0h-19c-1.5,0-2.23,0-3.1,0h-32.3c-1.09,0-1.66,0-2.31,0H80.78" transform="translate(-40.77 -69.46)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path d="M289.940000,327.880000L244.880000,327.880000L212.800000,296.580000C212.095606,295.984670,211.064394,295.984670,210.360000,296.580000L200.160000,306.810000C199.514003,307.368578,198.555997,307.368578,197.910000,306.810000L178.910000,286.640000C178.015260,285.883131,176.704740,285.883131,175.810000,286.640000L149.390000,312.280000C148.745622,312.842909,147.784378,312.842909,147.140000,312.280000L144.510000,309.360000C143.856374,308.761309,142.853626,308.761309,142.200000,309.360000L124.630000,329L80.780000,329" transform="translate(-40.77 -69.46)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
+      <animate attributeName="d"
+               from="M289.940000,327.880000L244.880000,327.880000L212.800000,296.580000C212.095606,295.984670,211.064394,295.984670,210.360000,296.580000L200.160000,306.810000C199.514003,307.368578,198.555997,307.368578,197.910000,306.810000L178.910000,286.640000C178.015260,285.883131,176.704740,285.883131,175.810000,286.640000L149.390000,312.280000C148.745622,312.842909,147.784378,312.842909,147.140000,312.280000L144.510000,309.360000C143.856374,308.761309,142.853626,308.761309,142.200000,309.360000L124.630000,329L80.780000,329"
+               to="M289.940000,328.963427L244.880000,328.963427L212.800000,327.941352C212.095606,327.921912,211.064394,327.921912,210.360000,327.941352L200.160000,328.275404C199.514003,328.293644,198.555997,328.293644,197.910000,328.275404L178.910000,327.616770C178.015260,327.592055,176.704740,327.592055,175.810000,327.616770L149.390000,328.454023C148.745622,328.472404,147.784378,328.472404,147.140000,328.454023L144.510000,328.358672C143.856374,328.339123,142.853626,328.339123,142.200000,328.358672L124.630000,329L80.780000,329" dur="0.5s" calcMode="linear" begin="cloudRightMotion.end - 2.5s" fill="freeze" />
+    </path>
   </g>
+
   <path id="tomoveWindow" d="M238.03 48 Q219.123 78.509 166 163 L166 163" fill="none" stroke-width="0" stroke="rgb(0,0,0)"/>
 </svg>
