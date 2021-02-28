@@ -196,7 +196,7 @@
 
     <g opacity="0">
       <animate attributeName="opacity"
-               dur="1s"
+               dur="0.75s"
                begin="zepellinWindowOpacityEnd.end - 0.52s"
                from="0" to="1"
                fill="freeze" />
