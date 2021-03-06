@@ -2996,7 +2996,6 @@ img {
   transform: scale(1); }
 
 #result3 .result__title svg {
-  transform: translateY(-112px);
   overflow: visible; }
 
 .screen--rules {
