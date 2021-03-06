@@ -46,7 +46,6 @@ export default () => {
       pathAnimate.setAttribute(`to`, `${pathLength} 0`);
 
       if (elemId === 'result3Title') {
-
         const delay = parseFloat(pathAnimate.getAttribute('dur').slice(0, -1));
         pathAnimate.setAttribute(`begin`, `${delay + (0.02 * index)}s`);
 
