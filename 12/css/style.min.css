@@ -2995,6 +2995,10 @@ img {
 #result2.screen--show .result__title svg {
   transform: scale(1); }
 
+#result3 .result__title svg {
+  transform: translateY(-112px);
+  overflow: visible; }
+
 .screen--rules {
   background-color: #5f458c; }
 
