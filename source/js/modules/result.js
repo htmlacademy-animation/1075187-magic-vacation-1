@@ -34,23 +34,23 @@ export default () => {
     }
   }
 
-
   function setTitleAnimation(elemId) {
     const elem = document.getElementById(elemId);
     const pathList = [...elem.querySelectorAll(`path`)];
 
     pathList.forEach((path, index) => {
-      const pathLength = path.getTotalLength() / 2;
+      const pathLength = Math.round(path.getTotalLength() / 2);
       const pathAnimate = path.querySelector(`animate`);
 
       path.setAttribute(`stroke-dasharray`, `0 ${pathLength}`);
       pathAnimate.setAttribute(`to`, `${pathLength} 0`);
 
       if (elemId === 'result3Title') {
-        setBounceAnimation(path, index);
 
-        const delay = pathAnimate.getAttribute('dur');
-        pathAnimate.setAttribute(`begin`, `${delay + (0.2 * index)}`);
+        const delay = parseFloat(pathAnimate.getAttribute('dur').slice(0, -1));
+        pathAnimate.setAttribute(`begin`, `${delay + (0.02 * index)}s`);
+
+        setBounceAnimation(path, index);
       }
 
       pathAnimate.beginElement();
