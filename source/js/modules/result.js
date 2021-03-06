@@ -59,9 +59,9 @@ export default () => {
 
   function setBounceAnimation(path, index) {
     const pathAnimateTransform = path.querySelector(`animateTransform`);
-    const bounceSpeed = 1.3;
 
+    pathAnimateTransform.setAttribute(`begin`, `pathAnimation.begin`);
     pathAnimateTransform.setAttribute(`keyTimes`, `0; ${0.05 + (0.05 * index)}; ${0.68 + (0.01 * index)}; ${0.85 + (0.01 * index)}; 1`);
-    pathAnimateTransform.setAttribute(`dur`, `${bounceSpeed - (0.1 * index)}s`);
+    pathAnimateTransform.setAttribute(`dur`, `${0.8 + (0.09 * index)}s`);
   }
 };
