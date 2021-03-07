@@ -362,6 +362,25 @@
   }
 }
 
+#result,
+#result2 {
+  .result__title svg {
+    transform: scale(1.2);
+    transition: transform .3s linear;
+  }
+
+  &.screen--show {
+    .result__title svg {transform: scale(1);}
+  }
+}
+
+#result3 {
+  .result__title svg {
+    overflow: visible;
+  }
+}
+
+
 .screen--rules {
   background-color: $c-dark;
 }
