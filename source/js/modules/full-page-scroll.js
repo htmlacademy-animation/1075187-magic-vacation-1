@@ -1,4 +1,7 @@
 import throttle from 'lodash/throttle';
+import countDownTimer from './countdown-timer';
+
+const timer = new countDownTimer();
 
 export default class FullPageScroll {
   constructor() {
@@ -53,6 +56,12 @@ export default class FullPageScroll {
     if (activeItem) {
       this.menuElements.forEach((item) => item.classList.remove(`active`));
       activeItem.classList.add(`active`);
+
+      if (activeItem.dataset.href === `game`) {
+        timer.startTimer();
+      } else {
+        timer.stopTimer();
+      }
     }
   }
 
