@@ -10235,10 +10235,10 @@ class countDownTimer {
   setTime() {
     const remainingTime = this.getRemainingTime(this.endTime);
 
-    this.minutesElem.textContent = this.getFormatTime((remainingTime / (60 * 1000)) % 60);
-    this.secondsElem.textContent = this.getFormatTime((remainingTime / 1000) % 60);
-
     if (remainingTime >= 1000) {
+      this.minutesElem.textContent = this.getFormatTime((remainingTime / (60 * 1000)) % 60);
+      this.secondsElem.textContent = this.getFormatTime((remainingTime / 1000) % 60);
+
       requestAnimationFrame(this.setTime.bind(this));
     }
   }
