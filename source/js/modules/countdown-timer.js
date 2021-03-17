@@ -2,12 +2,13 @@ export default class countDownTimer {
   constructor() {
     this.timeId = undefined;
     this.endTime = undefined;
+    this.startTime = undefined;
     this.minutesElem = document.querySelector(`.game__counter span:first-child`);
     this.secondsElem = document.querySelector(`.game__counter span:last-child`);
   }
 
   getRemainingTime(stopTime) {
-    return stopTime - new Date().getTime();
+    return stopTime - Date.now();
   }
 
   getFormatTime(time) {
@@ -17,17 +18,22 @@ export default class countDownTimer {
 
   setTime() {
     const remainingTime = this.getRemainingTime(this.endTime);
+    const interval = this.getRemainingTime(this.startTime);
 
-    if (remainingTime >= 1000) {
-      this.minutesElem.textContent = this.getFormatTime((remainingTime / (60 * 1000)) % 60);
-      this.secondsElem.textContent = this.getFormatTime((remainingTime / 1000) % 60);
+    if (remainingTime > 0) {
+      if (Math.abs(interval) >= 1000) {
+        this.startTime = Date.now();
+        this.minutesElem.textContent = this.getFormatTime((remainingTime / (60 * 1000)) % 60);
+        this.secondsElem.textContent = this.getFormatTime((remainingTime / 1000) % 60);
+      }
 
       requestAnimationFrame(this.setTime.bind(this));
     }
   }
 
   startTimer () {
-    this.endTime = new Date().getTime() + (5 * 60 * 1000);
+    this.startTime = Date.now();
+    this.endTime = this.startTime + (5 * 60 * 1000);
     this.timeId = requestAnimationFrame(this.setTime.bind(this));
   }
 
