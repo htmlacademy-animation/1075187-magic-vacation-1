@@ -10,6 +10,8 @@ import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 import TextAnimation from "./modules/text-animation";
 
+import prizes from './modules/prizes';
+
 // init modules
 mobileHeight();
 slider();
@@ -19,6 +21,10 @@ chat();
 result();
 form();
 social();
+
+document.addEventListener(`DOMContentLoaded`, () => {
+  prizes();
+});
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();

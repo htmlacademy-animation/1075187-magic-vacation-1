@@ -127,11 +127,14 @@
   }
 
   &--journeys {
+    transform: translateX(100%);
+
     .prizes__icon {
       position: relative;
       left: -5.9rem;
       bottom: -1.4rem;
       width: 26.8rem;
+      opacity: 1;
 
       @media (min-width: $stop-scaling) {
         left: -59px;
@@ -152,6 +155,16 @@
 
       @media (max-width: $mobile) and (orientation: landscape) {
         width: 10rem;
+      }
+    }
+
+    &.active {
+      transform: translateX(0);
+      transition: transform .5s linear 4s;
+
+      .prizes__icon {
+        opacity: 1;
+        transition: opacity 1.5s linear 0s;
       }
     }
   }
@@ -188,6 +201,8 @@
         width: 7rem;
       }
     }
+
+    .prizes__desc b {width: 1ch;}
   }
 
   &--codes {
@@ -214,6 +229,8 @@
         width: 10rem;
       }
     }
+
+    .prizes__desc b {width: 3ch;}
   }
 }
 
@@ -232,9 +249,20 @@
 .prizes__desc {
   display: flex;
   align-items: flex-end;
+  //justify-content: flex-end;
   margin: 5.6rem 0 0 0;
   font-size: 1.8rem;
   line-height: 1.1;
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
+    transition: opacity 0.1s ease 2s;
+
+    span {
+      animation: showTextLeft 0.8s ease 2s forwards;
+    }
+  }
 
   @media (min-width: $stop-scaling) {
     margin-top: 56px;
